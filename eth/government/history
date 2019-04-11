@@ -1,0 +1,1490 @@
+eth.accounts
+admin.nodeInfo.enode
+eth.syncing
+admin.nodeInfo
+admin.nodeInfo.enode
+net.peerCount
+admin.nodeInfo.enode
+eth.blockNumber
+admin.nodeInfo.enod
+admin.nodeInfo.enode
+eth.blockNumber
+eth.accounts[0]
+abi = ([
+{
+"constant": false,
+"inputs": [
+{
+"name": "_username",
+"type": "string"
+},
+{
+"name": "_login_as",
+"type": "string"
+}
+],
+"name": "addUser",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getStorageLength",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getUser",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "string"
+},
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_current_timestamp",
+"type": "uint256"
+},
+{
+"name": "_voltage_consumption",
+"type": "int256"
+},
+{
+"name": "_power_consumption",
+"type": "int256"
+},
+{
+"name": "_energy_consumption",
+"type": "int256"
+}
+],
+"name": "addDataEntry",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDataEntry",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e = eth.contract(abi).at('0xf168883f283904ed4d7c8bcd862c52f6446421cc')
+e.getUser()
+e.addUser.sendTransaction('Government #1', 'government', {from: eth.accounts[0]})
+miner.start()
+miner.stop()
+eth.getBalance(eth.accounts[0])
+e.addUser.sendTransaction('Government #1', 'government', {from: eth.accounts[0]})
+miner.start()
+miner.stop()
+e.getUser()
+abi = ([
+{
+"constant": false,
+"inputs": [
+{
+"name": "_username",
+"type": "string"
+},
+{
+"name": "_login_as",
+"type": "string"
+}
+],
+"name": "addUser",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getStorageLength",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getUser",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "string"
+},
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_current_timestamp",
+"type": "uint256"
+},
+{
+"name": "_voltage_consumption",
+"type": "int256"
+},
+{
+"name": "_power_consumption",
+"type": "int256"
+},
+{
+"name": "_energy_consumption",
+"type": "int256"
+}
+],
+"name": "addDataEntry",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDataEntry",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e = eth.contract(abi).at('0x542b4ef5bb5739cf2ab7e467a9a49fcd4fe89a14')
+e.addUser.sendTransaction('Government #1', 'government', {from: eth.accounts[0], gas: 150000})
+miner.start()
+miner.stop()
+e.getUser()
+abi = ([
+{
+"constant": false,
+"inputs": [
+{
+"name": "_username",
+"type": "string"
+},
+{
+"name": "_login_as",
+"type": "string"
+}
+],
+"name": "addUser",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getStorageLength",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_limit",
+"type": "uint256"
+}
+],
+"name": "setConsumptionLimit",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getUser",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "string"
+},
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getConsumptionLimit",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_current_timestamp",
+"type": "uint256"
+},
+{
+"name": "_voltage_consumption",
+"type": "int256"
+},
+{
+"name": "_power_consumption",
+"type": "int256"
+},
+{
+"name": "_energy_consumption",
+"type": "int256"
+}
+],
+"name": "addDataEntry",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDataEntry",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e3 = eth.contract(abi).at('0x5171eed332412321bedf080816edc51383caf7fd')
+eth.getCode(e3.address)
+loadScript('scripts/populate_user_government.js')
+miner.start()
+miner.stop()
+e3.getUser()
+miner.stop()
+loadScript('smart_contracts/incentive_storage.js')
+miner.start()
+miner.stop()
+admin.peers
+abi = ([
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+}
+],
+"name": "getConsumptionCost",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_cost",
+"type": "uint256"
+}
+],
+"name": "setIncentive",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e = eth.contract(abi).at('0xe9699269e91774a3f44f214700d6401519dbcce1')
+eth.getCode(e.address)
+e.setIncentive.sendTransaction(0, 52, {from: eth.accounts[0], gas: 100000})
+e.getIncentive(0)
+e.getConsumptionCost(0)
+e.kill.sendTransaction({from: eth.accounts[0]})
+loadScript('smart_contracts/incentive_storage.js')
+abi = ([
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_cost",
+"type": "uint256"
+}
+],
+"name": "setIncentive",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+}
+],
+"name": "getIncentive",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e = eth.contract(abi).at('0x59d13b56bce39b7d54198cf93482d074505ebad8')
+eth.getCode(e.address))
+eth.getCode(e.address)
+e.setIncentive.sendTransaction(0, 52, {from: eth.accounts[0], gas: 100000})
+e.getIncentive(0)
+e.getIncentive(1)
+e.kill.sendTransaction({from:eth.accounts[0]})
+loadScript('smart_contracts/incentive_storage.js')
+abi = ([
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_cost",
+"type": "uint256"
+}
+],
+"name": "setIncentive",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+}
+],
+"name": "getIncentive",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e = eth.contract(abi).at('0x2eae772792bbd1f321fc1fbb46429a54cc9be7db')
+e.setIncentive.sendTransaction(0, 52, {from: eth.accounts[0], gas: 100000})
+loadScript('scripts/populate_incentive.js')
+e.getIncentive(47)
+e.getIncentive(36)
+loadScript('scripts/populate_incentive.js')
+'hi gaby'
+'jiayou sin'
+asdf
+// i ganggu gak
+// lumayan kayaknya
+admin.nodeinfo.enode
+admin.nodeInfo.enode
+abi = ([
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_cost",
+"type": "uint256"
+}
+],
+"name": "setIncentive",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+}
+],
+"name": "getIncentive",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e = eth.contract(abi).at('0x2eae772792bbd1f321fc1fbb46429a54cc9be7db')
+e.kill.sendTransaction({from: eth.accounts[0]})
+loadScripts('smart_contracts/incentive_storage.js')
+loadScript('smart_contracts/incentive_storage.js')
+abi = ([
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_incentive",
+"type": "int256"
+}
+],
+"name": "setIncentive",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+}
+],
+"name": "getIncentive",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "int256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e = eth.contract(abi).at('0xfd782feaf34b84daaa1f6d54f5db3f0bb1ee2410')
+loadScript('scripts/populate_incentive.js')
+admin.nodeInfo
+abi = ([
+{
+"constant": false,
+"inputs": [
+{
+"name": "_username",
+"type": "string"
+},
+{
+"name": "_login_as",
+"type": "string"
+}
+],
+"name": "addUser",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getStorageLength",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_limit",
+"type": "uint256"
+}
+],
+"name": "setConsumptionLimit",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDemandPrediction",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getUser",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "string"
+},
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getConsumptionLimit",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_prediction",
+"type": "uint256"
+}
+],
+"name": "saveDemandPrediction",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_current_timestamp",
+"type": "uint256"
+},
+{
+"name": "_voltage_consumption",
+"type": "int256"
+},
+{
+"name": "_power_consumption",
+"type": "int256"
+},
+{
+"name": "_energy_consumption",
+"type": "int256"
+}
+],
+"name": "addDataEntry",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDataEntry",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e4 = eth.contract(abi).at('0x9c2c8db68c2f9fbf0b0cf3ed8569b86ca4c8f8da')
+abi = ([
+{
+"constant": false,
+"inputs": [
+{
+"name": "_username",
+"type": "string"
+},
+{
+"name": "_login_as",
+"type": "string"
+}
+],
+"name": "addUser",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getStorageLength",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_limit",
+"type": "uint256"
+}
+],
+"name": "setConsumptionLimit",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getUser",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "string"
+},
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getConsumptionLimit",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_current_timestamp",
+"type": "uint256"
+},
+{
+"name": "_voltage_consumption",
+"type": "int256"
+},
+{
+"name": "_power_consumption",
+"type": "int256"
+},
+{
+"name": "_energy_consumption",
+"type": "int256"
+}
+],
+"name": "addDataEntry",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDataEntry",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e3 = eth.contract(abi).at('0x5171eed332412321bedf080816edc51383caf7fd')
+e3.getUser()
+e4.addUser.sendTransaction('Government #1', 'government', {from: eth.accounts[0]})
+e4.getUser()
+admin.nodeInfo
+abi = ([
+{
+"constant": false,
+"inputs": [
+{
+"name": "_username",
+"type": "string"
+},
+{
+"name": "_login_as",
+"type": "string"
+}
+],
+"name": "addUser",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getStorageLength",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_limit",
+"type": "uint256"
+}
+],
+"name": "setConsumptionLimit",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDemandPrediction",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getUser",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "string"
+},
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getConsumptionLimit",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getPredictionIndex",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_addr",
+"type": "address"
+},
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_prediction",
+"type": "uint256"
+}
+],
+"name": "saveDemandPrediction",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_current_timestamp",
+"type": "uint256"
+},
+{
+"name": "_voltage_consumption",
+"type": "int256"
+},
+{
+"name": "_power_consumption",
+"type": "int256"
+},
+{
+"name": "_energy_consumption",
+"type": "int256"
+}
+],
+"name": "addDataEntry",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDataEntry",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_addr",
+"type": "address"
+},
+{
+"name": "_date",
+"type": "string"
+}
+],
+"name": "updatePredictionIndex",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e7 = eth.contract(abi).at('0x64ed73b6fd99d5d682728ba69bdb29650f71d249')
+e7.addUser.sendTransaction("Government #1", 'government', {from: eth.accounts[0]})
+admin.nodeInfo

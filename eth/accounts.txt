@@ -1,0 +1,26 @@
+[Consumers]
+Password: "consumer{number}" i.e. Consumer #1 -> "consumer1"
+
+	Account: 0x09831eeaeba13662b7e445c5b5e7daffc39ed068
+	Password: consumer1
+
+	Account: 0xd8bd46d1852ecba922befe194ff1e6f713913ef0
+	Password: consumer2
+
+[Providers]
+Password: "provider{number}" i.e. Provider #1 -> "provider1"
+
+	Account: 0x0901f2a0d87855a5fa0e5a244e64e97defdb01ee
+	Password: provider1
+
+[Government]
+Password: "government{number}" i.e. Government #1 -> "government1"
+
+	Account: "0x019b7a7f3485f0cdc6355c5ab66f4b9388bd56c2"
+	Password: government1
+
+[Admin]
+Password: "admin{number}" i.e. Admin #1 -> "admin1"
+
+	Account: "2da3c1b56148216e0a12766d271b2d1ff94c8a37"
+	Password: admin1

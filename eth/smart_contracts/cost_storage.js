@@ -1,0 +1,12 @@
+var cost_contractContract = web3.eth.contract([{"constant":false,"inputs":[],"name":"kill","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_time_offset","type":"uint256"},{"name":"_cost","type":"uint256"}],"name":"setConsumptionCost","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_time_offset","type":"uint256"}],"name":"getConsumptionCost","outputs":[{"name":"","type":"address"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]);
+var cost_contract = cost_contractContract.new(
+   {
+     from: web3.eth.accounts[0], 
+     data: '0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610283806100606000396000f3fe608060405234801561001057600080fd5b506004361061005e576000357c01000000000000000000000000000000000000000000000000000000009004806341c0e1b5146100635780637fe55f7e1461006d578063b76b5556146100a5575b600080fd5b61006b610121565b005b6100a36004803603604081101561008357600080fd5b810190808035906020019092919080359060200190929190505050610191565b005b6100d1600480360360208110156100bb57600080fd5b81019080803590602001909291905050506101e0565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561018f573373ffffffffffffffffffffffffffffffffffffffff16ff5b565b61019961023d565b6040805190810160405280848152602001838152509050806001846030811015156101c057fe5b600202016000820151816000015560208201518160010155905050505050565b60008060006101ed61023d565b6001856030811015156101fc57fe5b600202016040805190810160405290816000820154815260200160018201548152505090503381600001518260200151829250935093509350509193909250565b60408051908101604052806000815260200160008152509056fea165627a7a723058200568a119126ffd07d74ef2720bbc22416eff5c79ef9fef4f9962df9f632179580029', 
+     gas: '3000000'
+   }, function (e, contract){
+    console.log(e, contract);
+    if (typeof contract.address !== 'undefined') {
+         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+    }
+ })

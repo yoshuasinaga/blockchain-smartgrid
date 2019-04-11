@@ -1,0 +1,1653 @@
+eth.accounts
+eth.accounts[0]
+eth.accounts
+admin.nodeInfo.enode
+eth.blockNumber
+eth.syncing
+admin.peers
+eth.syncing
+admin.nodeInfo.enode
+eth.syncing
+abi = ([
+{
+"constant": true,
+"inputs": [],
+"name": "getStorageLength",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_username",
+"type": "string"
+}
+],
+"name": "addUser",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getUser",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_current_timestamp",
+"type": "uint256"
+},
+{
+"name": "_voltage_consumption",
+"type": "int256"
+},
+{
+"name": "_power_consumption",
+"type": "int256"
+},
+{
+"name": "_energy_consumption",
+"type": "int256"
+}
+],
+"name": "addDataEntry",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDataEntry",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+abi
+e = eth.contract(abi).at("0xf4a6c16e18e161786a26f0b0c6a330d3fbd61bb0")
+e.getUser()
+e.getStorageLength()
+e.addUser.sendTransaction('Provider #1', {from: eth.accounts[0]})
+miner.start()
+miner.stop()
+e.addUser.sendTransaction('Provider #1', {from: eth.accounts[0]})
+miner.start()
+miner.stop()
+e.getUser()
+eth.syncing
+eth.blockNumber
+abi = (
+[
+{
+"constant": true,
+"inputs": [],
+"name": "getStorageLength",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_username",
+"type": "string"
+}
+],
+"name": "addUser",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getUser",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_current_timestamp",
+"type": "uint256"
+},
+{
+"name": "_voltage_consumption",
+"type": "int256"
+},
+{
+"name": "_power_consumption",
+"type": "int256"
+},
+{
+"name": "_energy_consumption",
+"type": "int256"
+}
+],
+"name": "addDataEntry",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDataEntry",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e = eth.contract(abi).at(0xf4a6c16e18e161786a26f0b0c6a330d3fbd61bb0)
+e.getUser()
+eth.getCode(e.address)
+eth
+e = eth.contract(abi).at('0xf4a6c16e18e161786a26f0b0c6a330d3fbd61bb0')
+e.getUser()
+e.addUser.sendTransaction('Provider #1', {from: eth.accounts[0]})
+miner.start()
+miner.stop()
+e.addUser.sendTransaction('Provider #1', {from: eth.accounts[0]})
+miner.start()
+miner.stop()
+e.getUser()
+eth.blockNumber
+eth.accounts[0]
+eth.accounts
+abi = ([
+{
+"constant": false,
+"inputs": [
+{
+"name": "_username",
+"type": "string"
+},
+{
+"name": "_login_as",
+"type": "string"
+}
+],
+"name": "addUser",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getStorageLength",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getUser",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "string"
+},
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_current_timestamp",
+"type": "uint256"
+},
+{
+"name": "_voltage_consumption",
+"type": "int256"
+},
+{
+"name": "_power_consumption",
+"type": "int256"
+},
+{
+"name": "_energy_consumption",
+"type": "int256"
+}
+],
+"name": "addDataEntry",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDataEntry",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e = eth.contract(abi).at('0xf168883f283904ed4d7c8bcd862c52f6446421cc')
+e.addUser.sendTransaction('Provider #1', 'provider', {from: eth.accounts[0]})
+miner.start()
+miner.stop()
+e.getUser()
+eth.accounts[0]
+miner.start()
+miner.stop()
+e.getUser()
+eth.syncing
+net.peerCount
+admin.addPeer("enode://777e0c4eea3915cf9bd7d09a244f97409520b78552739c4e8d3b988dece0ddd320f1e35c621ec492508c9977f340b1ea057b056087d9695fc67fb1975fc64378@127.0.0.1:30305?discport=0")
+net.peers
+net.peerCount
+admin.peers
+miner.start()
+miner.stop()
+admin.peers
+net.peerCount
+abi = ([
+{
+"constant": false,
+"inputs": [
+{
+"name": "_username",
+"type": "string"
+},
+{
+"name": "_login_as",
+"type": "string"
+}
+],
+"name": "addUser",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getStorageLength",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getUser",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "string"
+},
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_current_timestamp",
+"type": "uint256"
+},
+{
+"name": "_voltage_consumption",
+"type": "int256"
+},
+{
+"name": "_power_consumption",
+"type": "int256"
+},
+{
+"name": "_energy_consumption",
+"type": "int256"
+}
+],
+"name": "addDataEntry",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDataEntry",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e = eth.contract(abi).at('0x542b4ef5bb5739cf2ab7e467a9a49fcd4fe89a14')
+e.addUser.sendTransaction('Provider #1', 'provider', {from: eth.accounts[0], gas:150000})
+miner.start()
+miner.stop()
+e.getUser()
+abi = ([
+{
+"constant": false,
+"inputs": [
+{
+"name": "_username",
+"type": "string"
+},
+{
+"name": "_login_as",
+"type": "string"
+}
+],
+"name": "addUser",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getStorageLength",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_limit",
+"type": "uint256"
+}
+],
+"name": "setConsumptionLimit",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getUser",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "string"
+},
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getConsumptionLimit",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_current_timestamp",
+"type": "uint256"
+},
+{
+"name": "_voltage_consumption",
+"type": "int256"
+},
+{
+"name": "_power_consumption",
+"type": "int256"
+},
+{
+"name": "_energy_consumption",
+"type": "int256"
+}
+],
+"name": "addDataEntry",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDataEntry",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e3 = eth.contract(abi).at('0x5171eed332412321bedf080816edc51383caf7fd')
+eth.getCode(e3.address)
+loadScript('scripts/populate_user_provider.js')
+loadScript('scripts/populate_user_providers.js')
+miner.start()
+miner.stop()
+e3.getUser()
+loadScript('smart_contracts/cost_storage.js')
+abi = ([
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_cost",
+"type": "uint256"
+}
+],
+"name": "setConsumptionCost",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+}
+],
+"name": "getConsumptionCost",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e = eth.contract(abi).at('0x09d37836fe738d6ba39d01155803b60f080c95be')
+eth.getCode(e.address)
+e.setConsumptionCost.sendTransaction(0, 12, {from: eth.accounts[0], gas: 100000})
+e.getConsumptionCost(0)
+e.setConsumptionCost.sendTransaction(1, 12.5, {from: eth.accounts[0], gas: 100000})
+e.getConsumptionCost(0)
+e.getConsumptionCost(1)
+e.getConsumptionCost(2)
+e.setConsumptionCost.sendTransaction(1, 0.45, {from: eth.accounts[0], gas: 100000})
+e.getConsumptionCost(1)
+e.kill.sendTransaction({from:eth.accounts[0]})
+loadScript('smart_contracts/cost_storage.js')
+abi = ([
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_cost",
+"type": "uint256"
+}
+],
+"name": "setConsumptionCost",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+}
+],
+"name": "getConsumptionCost",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e = eth.contract(abi).at('0x28dbb912a181a5647d621312a0bcd44df409fc5d')
+e.setConsumptionCost.sendTransaction(0, 25.52, {from:eth.accounts[0], gas:100000})
+e.getConsumptionCost(0)
+e.getConsumptionCost(1)
+a = 25.52
+a
+e.kill.sendTransaction({from: eth.accounts[0]})
+loadScript('smart_contracts/cost_storage.js')
+e = eth.constract(abi).at('0x428ef7d7feb6c1cb796959493b1302513e2cca0d')
+e = eth.contract(abi).at('0x428ef7d7feb6c1cb796959493b1302513e2cca0d')
+eth.getCode(e.address)
+e.setConsumptionCost.sendTransaction(0, 2552, {from: eth.accounts[0], gas: 100000})
+e.getConsumptionCost(0)
+admin.peers
+e
+e.kill.sendTransaction({from:eth.accounts[0]})
+loadScript('smart_contracts/cost_storage.js')
+abi = ([
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_cost",
+"type": "uint256"
+}
+],
+"name": "setConsumptionCost",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+}
+],
+"name": "getConsumptionCost",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e = eth.contract(abi).at('0x322f01f3ee7fe4044581cd293a038702d4ee6adf')
+eth.getCode(e.address)
+e.setConsumptionCost(0, 2552, {from: eth.accounts[0], gas: 150000})
+e.getConsumptionCost(0)
+loadScript('scripts/populate_tariff.js')
+e.getConsumptionCost(47)
+miner.start()
+miner.stop()
+e.getConsumptionCost(47)
+admin.nodeInfo.enode
+exit()
+stop()
+close()
+admin.nodeInfo
+admin.peers
+admin.nodeInfo
+abi = ([
+{
+"constant": false,
+"inputs": [
+{
+"name": "_username",
+"type": "string"
+},
+{
+"name": "_login_as",
+"type": "string"
+}
+],
+"name": "addUser",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getStorageLength",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_limit",
+"type": "uint256"
+}
+],
+"name": "setConsumptionLimit",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDemandPrediction",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getUser",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "string"
+},
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getConsumptionLimit",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_prediction",
+"type": "uint256"
+}
+],
+"name": "saveDemandPrediction",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_current_timestamp",
+"type": "uint256"
+},
+{
+"name": "_voltage_consumption",
+"type": "int256"
+},
+{
+"name": "_power_consumption",
+"type": "int256"
+},
+{
+"name": "_energy_consumption",
+"type": "int256"
+}
+],
+"name": "addDataEntry",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDataEntry",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e4 = eth.contract(abi).at('0x9c2c8db68c2f9fbf0b0cf3ed8569b86ca4c8f8da')
+abi = ([
+{
+"constant": false,
+"inputs": [
+{
+"name": "_username",
+"type": "string"
+},
+{
+"name": "_login_as",
+"type": "string"
+}
+],
+"name": "addUser",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getStorageLength",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_limit",
+"type": "uint256"
+}
+],
+"name": "setConsumptionLimit",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getUser",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "string"
+},
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getConsumptionLimit",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_current_timestamp",
+"type": "uint256"
+},
+{
+"name": "_voltage_consumption",
+"type": "int256"
+},
+{
+"name": "_power_consumption",
+"type": "int256"
+},
+{
+"name": "_energy_consumption",
+"type": "int256"
+}
+],
+"name": "addDataEntry",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDataEntry",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e3 = eth.contract(abi).at('0x5171eed332412321bedf080816edc51383caf7fd')
+e4.getUser()
+e3.getUser()
+e4.addUser.sendTransaction('Provider #1', 'provider', {from: eth.accounts[0]})
+e4.getUser()
+admin.nodeInfo
+abi = ([
+{
+"constant": false,
+"inputs": [
+{
+"name": "_username",
+"type": "string"
+},
+{
+"name": "_login_as",
+"type": "string"
+}
+],
+"name": "addUser",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getStorageLength",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_limit",
+"type": "uint256"
+}
+],
+"name": "setConsumptionLimit",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [],
+"name": "kill",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDemandPrediction",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getUser",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "string"
+},
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getConsumptionLimit",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getPredictionIndex",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_addr",
+"type": "address"
+},
+{
+"name": "_time_offset",
+"type": "uint256"
+},
+{
+"name": "_prediction",
+"type": "uint256"
+}
+],
+"name": "saveDemandPrediction",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_current_timestamp",
+"type": "uint256"
+},
+{
+"name": "_voltage_consumption",
+"type": "int256"
+},
+{
+"name": "_power_consumption",
+"type": "int256"
+},
+{
+"name": "_energy_consumption",
+"type": "int256"
+}
+],
+"name": "addDataEntry",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "_index",
+"type": "uint256"
+}
+],
+"name": "getDataEntry",
+"outputs": [
+{
+"name": "",
+"type": "address"
+},
+{
+"name": "",
+"type": "uint256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+},
+{
+"name": "",
+"type": "int256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_addr",
+"type": "address"
+},
+{
+"name": "_date",
+"type": "string"
+}
+],
+"name": "updatePredictionIndex",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"inputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+}
+])
+e7 = eth.contract(abi).at('0x64ed73b6fd99d5d682728ba69bdb29650f71d249')
+e7.addUser.sendTransaction('Provider #1', 'provider', {from: eth.accounts[0}})
+e7.addUser.sendTransaction('Provider #1', 'provider', {from: eth.accounts[0})
+e7.addUser.sendTransaction('Provider #1', 'provider', {from: eth.accounts[0]})
+admin.nodeInfo
