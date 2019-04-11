@@ -1,0 +1,28 @@
+<div class="modal fade" id="setModal" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">
+					{% if url_for(request.endpoint)[1:] in ['set_limit'] %}
+					Set Value for Consumption Limit
+					{% elif url_for(request.endpoint)[1:] in ['set_tariff'] %}
+					Set Value for Consumption Tariff
+					{% elif url_for(request.endpoint)[1:] in ['set_incentive'] %}
+					Set Value for Hourly Incentive
+					{% endif %}
+				</h4>
+			</div>
+			<form id="set-value-form">
+				<div class="modal-body">
+					<p>Please enter the new value:
+					<input type='text' name='new-value' id='new-value' autofocus>
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button id="set-value-btn" type="button" class="btn btn-default" data-dismiss="modal">Set Value</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

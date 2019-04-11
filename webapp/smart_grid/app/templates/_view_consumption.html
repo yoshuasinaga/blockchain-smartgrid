@@ -1,0 +1,118 @@
+<!-- Include password modal popup for set_limit -->
+{% if 'set_limit' in url_for(request.endpoint) %}
+{% include "_password_modal.html" %}
+{% endif %}
+<div style="width: auto; height: auto; display: flex; align-items: flex-end;">
+	<div style="margin-bottom: 10px; margin-top: 20px; width: 100%">
+		{% if set_limit %}
+		<h2 style="text-align: center; margin: 0px auto;">Set Your Daily Consumption Limit</h2>
+		{% else %}
+		<h2 style="text-align: center; margin: 0px auto;">Your Real-Time Energy Consumption</h2>
+		{% endif %}
+	</div>
+</div>
+<div style="width: 100%;">
+	<div id='chartContainer' style='height: 370px; width: 95%; margin: 0px auto; margin-top: 20px; margin-bottom: 10px'></div>
+</div>
+<div style="width: auto; height: auto; display: flex; align-items: flex-end; margin-top: 15px">
+	{% if not set_limit %}
+	<div class="btn-group" data-toggle="buttons" style="margin: 0px auto;">
+		<label id="hide-prediction" class="btn btn-primary active">			
+			<input type="radio">Hide Prediction
+		</label>
+		<label id="show-prediction" class="btn btn-primary">
+			<input type="radio">Show Prediction
+		</label>
+	</div>
+	{% else %}
+	<!-- <form id="set-limit-form" method="POST" style="margin: 0px auto;">
+		<input type="hidden" name="consumption_limit" value="">
+		<input id="set-limit" type="submit" class="btn btn-primary" value="Set Consumption Limit">
+	</form> -->
+	<button id="prompt-btn" type="button" class="btn btn-primary" style="margin: 0px auto;">Set Consumption Limit</button>
+	{% endif %}
+</div>
+<script>
+	window.onload = function() {
+		// Get data entries for today
+		var data_entries = []
+		{% if not set_limit %}
+		// Get user's real-time energy consumption
+		{% for index, entry in data_entries.iterrows() %}
+		data_entries.push({x: new Date({{ entry['timestamp'] }} * 1000), y: {{ entry['energy'] }}});
+		{% endfor %}
+		{% else %}
+		// Get user's consumption limit
+		var today = new Date()
+		var today_timestamp = (new Date(today.getFullYear(), today.getMonth(), today.getDate())).getTime()
+		{% for key in data_entries %}
+		data_entries.push({x: new Date(today_timestamp + 1800000 * {{ key }}), y: {{ data_entries[key] }}});
+		{% endfor %}
+		{% endif %}
+
+		// Get prediction for today
+		var prediction_data = []
+		{% for index, entry in prediction.iterrows() %}
+		prediction_data.push({x: new Date({{ entry['timestamp'] }} * 1000), y: {{ entry['energy'] }}})
+		{% endfor %}
+
+		{% if not set_limit %}
+		marker_type = "none"
+		{% else %}
+		marker_type = "circle"
+		{% endif %}
+
+		// Include scripts for chart
+		{% include "_chart.js" %}
+
+		{% if 'set_limit' in url_for(request.endpoint) %}
+		
+		// Include scripts for draggable chart
+		{% include "_draggable_chart.js" %}
+
+		// Event listener for set consumption limit button
+		document.getElementById("prompt-btn").addEventListener("click", promptPassword);
+		document.getElementById("submit-btn").addEventListener("click", setConsumptionLimit);
+
+		function promptPassword() {
+			$("#myModal").modal();
+		}
+
+		function setConsumptionLimit() {
+			var energyLimit = []
+			for (var i = 0; i < 48; i++) {
+				energyLimit.push(chart.data[0].dataPoints[i].y);
+			}
+			// password = prompt("Please enter your passphrase:");
+			// Submit users' input on consumption limit
+			document.forms['set-limit-form'].elements['consumption_limit'].value = JSON.stringify({
+				data: energyLimit
+			});
+		}
+		{% else %}
+		// Event listeners for show/hide prediction buttons
+		document.getElementById("show-prediction").addEventListener("click", showPrediction);
+		document.getElementById("hide-prediction").addEventListener("click", hidePrediction);
+
+		function showPrediction() {
+			if (chart.data[1] == null) {
+				chart.options.data.push({
+					type: "line",
+					markerType: "none",
+					dataPoints: prediction_data
+				});
+				chart.render();
+			}
+		}
+
+		function hidePrediction() {
+			if (chart.data[1] != null) {
+				chart.options.data.pop();
+				chart.render();
+			}
+		}
+		{% endif %}
+	}
+</script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

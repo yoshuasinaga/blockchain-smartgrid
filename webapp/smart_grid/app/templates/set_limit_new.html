@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+	<h1>Good day, {{ current_user.username }}!</h1>
+
+	<!-- Include password modal popup for set_limit -->
+	{% include "_password_modal.html" %}
+
+	<!-- Include sete modal popup for set_limit -->
+	{% include "_set_modal.html" %}
+
+	<div style="width: auto; height: auto; display: flex; align-items: flex-end;">
+		<div style="margin-bottom: 10px; margin-top: 20px; width: 100%">
+			<h2 style="text-align: center; margin: 0px auto;">Set Your Daily Consumption Limit</h2>
+		</div>
+	</div>
+	<div class="container-fluid" style="width: 100%;">
+		<div class="row">
+			<div class='col-lg-10'>
+				<div id='chartContainer' style='height: 370px; width: 100%; margin: 0px auto; margin-top: 20px; margin-bottom: 10px'></div>
+			</div>
+			<div class='col-lg-2' style="text-align:right;">
+				<p class="cost-header">Predicted Cost</p>
+				<p class="cost-content" id="predicted-cost">$0</p>
+				<p class="cost-header">Current Cost</p>
+				<p class="cost-content" id="current-cost">$0</p>
+				<p class="cost-header">Cost Savings</p>
+				<p class="cost-content" id="cost-savings">$0</p>
+			</div>
+		</div>
+	</div>
+	<div style="width: auto; height: auto; display: flex; align-items: flex-end; margin-top: 15px">
+		<button id="prompt-btn" type="button" class="btn btn-primary" style="margin: 0px auto;">Set Consumption Limit</button>
+	</div>
+{% endblock %}
+
+{% block scripts %}
+	<script>
+		window.onload = function() {
+			// Get data entries for today
+			var data_entries = []
+			// Get user's consumption limit
+			var today = new Date()
+			var today_timestamp = (new Date(today.getFullYear(), today.getMonth(), today.getDate())).getTime()
+			{% for key in data_entries %}
+			data_entries.push({x: new Date(today_timestamp + 1800000 * {{ key }}), y: {{ data_entries[key] }}});
+			{% endfor %}
+
+			// Get prediction for today
+			var prediction_data = []
+			{% for key in prediction %}
+			prediction_data.push({x: new Date({{ key }} * 1000), y: {{ prediction[key] }}});
+			{% endfor %}
+
+			marker_type = "circle"
+
+			// Include scripts for chart
+			{% include "_chart.js" %}
+
+			function calculatePredictedCost() {
+				var predictedCost = 0;
+				{% for key in range(prediction|length) %}
+				predictedCost += {{ prediction }}[today_timestamp / 1000 + 1800 * {{ key }}] * ({{ consumption_tariff }}[{{ key }}] / 100 - {{ incentive }}[{{ key }}] / 100);
+				{% endfor %}
+				return predictedCost;
+			}
+
+			function calculateCurrentCost() {
+				var currentCost = 0
+				for (var i = 0; i < chart.data[0].dataPoints.length; i++) {
+					currentCost += chart.data[0].dataPoints[i].y * ({{ consumption_tariff }}[i] / 100 - {{ incentive }}[i] / 100);
+				}
+				return currentCost;
+			}
+
+			function calculateCostSavings() {
+				return calculatePredictedCost() - calculateCurrentCost();
+			}
+
+			function refreshCosts(predicted_cost, current_cost, cost_savings) {
+				// CountUp Animation
+				var options = {
+					useEasing: true,
+					useGrouping: true,
+					separator: ',',
+					decimal: '.',
+					prefix: '$'
+				};
+				var currentPredictedCost = document.getElementById('predicted-cost').innerHTML.split('$')[1];
+				var currentCurrentCost = document.getElementById('current-cost').innerHTML.split('$')[1];
+				var currentCostSavings = document.getElementById('cost-savings').innerHTML.split('$')[1];
+				var predictedCostAnimation = new CountUp('predicted-cost', currentPredictedCost, predicted_cost, 2, 1, options);
+				var currentCostAnimation = new CountUp('current-cost', currentCurrentCost, current_cost, 2, 1, options);
+				var costSavingsAnimation = new CountUp('cost-savings', currentCostSavings, cost_savings, 2, 1, options);
+				if (!(predictedCostAnimation.error || currentCostAnimation.error || costSavingsAnimation.error )) {
+					predictedCostAnimation.start();
+					currentCostAnimation.start();
+					costSavingsAnimation.start();
+				} else {
+					console.error(predictedCostAnimation.error);
+					console.error(currentCostAnimation.error);
+					console.error(costSavingsAnimation.error);
+				}
+			}
+
+			// Include scripts for draggable chart
+			{% include "_draggable_chart.js" %}
+
+			// Event listener for set consumption limit button
+			document.getElementById("prompt-btn").addEventListener("click", promptPassword);
+			document.getElementById("submit-btn").addEventListener("click", setConsumptionLimit);
+
+			function promptPassword() {
+				$("#pwdModal").modal();
+			}
+
+			function promptSetValue() {
+				$("#setModal").modal();
+			}
+
+			function setConsumptionLimit() {
+				var energyLimit = []
+				for (var i = 0; i < 48; i++) {
+					energyLimit.push(chart.data[0].dataPoints[i].y);
+				}
+				// Submit users' input on consumption limit
+				document.forms['set-form'].elements['values'].value = JSON.stringify({
+					data: energyLimit
+				});
+			}
+			refreshCosts(calculatePredictedCost(), calculateCurrentCost(), calculateCostSavings());
+		}
+	</script>
+	<script src="{{ url_for('.static', filename='scripts/countUp/countUp.js') }}"></script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	{{ super () }}
+{% endblock %}

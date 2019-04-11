@@ -1,0 +1,25 @@
+{
+	"name": "countup.js",
+	"description": "Animates a numerical value by counting to it",
+	"version": "1.9.3",
+	"license": "MIT",
+	"main": "./dist/countUp.min.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/inorganik/countUp.js.git"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"babel-preset-es2015": "^6.24.1",
+		"babel-register": "^6.26.0",
+		"del": "^3.0.0",
+		"gulp": "^4.0.0",
+		"gulp-rename": "^1.2.2",
+		"gulp-uglify": "^3.0.0",
+		"gulp-wrap-umd": "^0.2.1"
+	},
+	"scripts": {
+		"build": "gulp",
+		"clean": "gulp clean"
+	}
+}

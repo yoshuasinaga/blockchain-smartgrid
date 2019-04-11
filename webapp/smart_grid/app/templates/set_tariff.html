@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+	<h1>Good day, {{ current_user.username }}!</h1>
+
+	<!-- Include password modal popup for set_tariff-->
+	{% include "_password_modal.html" %}
+
+	<!-- Include set modal popup for set_incentive -->
+	{% include "_set_modal.html" %}
+
+	<div style="width: auto; height: auto; display: flex; align-items: flex-end;">
+		<div style="margin-bottom: 10px; margin-top: 20px; width: 100%">
+			<h2 style="text-align: center; margin: 0px auto;">Set the Hourly Tariff</h2>
+		</div>
+	</div>
+	<div style="width: 100%;">
+		<div id="chartContainer" style="height: 370px; width: 95%; margin: 0px auto; margin-top: 20px; margin-bottom: 10px"></div>
+	</div>
+	<div style="width: auto; height: auto; display: flex; align-items: flex-end; margin-top: 15px">
+		<button id="prompt-btn" type="button" class="btn btn-primary" style="margin: 0px auto;">Set Tariff</button>
+	</div>
+{% endblock %}
+
+{% block scripts %}
+	<script>
+		window.onload = function() {
+			// Get current consumption tariff
+			var data_entries = [];
+			var today = new Date();
+			var today_timestamp = (new Date(today.getFullYear(), today.getMonth(), today.getDate())).getTime()
+			{% for key in consumption_tariff %}
+			data_entries.push({x: new Date(today_timestamp + 1800000 * {{ key }}), y: {{ consumption_tariff[key] }}});
+			{% endfor %}
+
+			marker_type = "circle";
+
+			// Include scripts for chart
+			{% include "_chart.js" %}
+
+			// Include scripts for draggable chart
+			{% include "_draggable_chart.js" %}
+
+			// Event listener for set tariff button
+			document.getElementById("prompt-btn").addEventListener("click", promptPassword);
+			document.getElementById("submit-btn").addEventListener("click", setTariff);
+
+			function promptPassword() {
+				$("#pwdModal").modal();
+			}
+
+			function promptSetValue() {
+				$("#setModal").modal();
+			}
+			
+			function setTariff() {
+				var tariff = [];
+				for (var i = 0; i < 48; i++) {
+					tariff.push(chart.data[0].dataPoints[i].y);
+				}
+				// Submit user's input on tariff
+				document.forms['set-form'].elements['values'].value = JSON.stringify({
+					data: tariff
+				});
+			}
+		}
+	</script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	{{ super() }}
+{% endblock %}

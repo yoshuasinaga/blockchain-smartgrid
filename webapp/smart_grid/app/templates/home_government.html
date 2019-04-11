@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+	<h1>Good day, {{ current_user.username }}!</h1>
+	<div style="width: auto; height: auto; display: flex; align-items: flex-end;">
+		<div style="margin-bottom: 10px; margin-top: 20px; width: 100%">
+			<h2 style="text-align: center; margin: 0px auto;">The Predicted Energy Demand</h2>
+		</div>
+	</div>
+	<div style="width: 100%;">
+		<div id='chartContainer' style='height: 370px; width: 95%; margin: 0px auto; margin-top: 20px; margin-bottom: 10px'></div>
+	</div>
+	<div style="width: auto; height: auto; display: flex; align-items: flex-end; margin-top: 15px">
+		<button id="set-incentive" type="button" class="btn btn-primary" style="margin: 0px auto;">Set Incentive Now</button>
+	</div>
+{% endblock %}
+
+{% block scripts %}
+	<script>
+		window.onload = function() {
+			// Get data entries for today
+			var data_entries = []
+			var prediction_data = []
+			{% for key in prediction %}
+			prediction_data.push({x: new Date({{ key }} * 1000), y: {{ prediction[key] }}});
+			{% endfor %}
+
+			marker_type = "none"
+
+			// Include scripts for chart
+			{% include "_chart.js" %}
+
+			// Event listeners for set tariff button
+			document.getElementById("set-incentive").addEventListener("click", redirectSetIncentive);
+
+			function redirectSetIncentive() {
+				window.location.href = "http://government.smartgrids.local:5000" + '{{ url_for("set_incentive") }}';
+			}
+		}
+	</script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	{{ super() }}
+{% endblock %}

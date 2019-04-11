@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+	<h1>Good day, {{ current_user.username }}!</h1>
+	<div style="width: auto; height: auto; display: flex; align-items: flex-end;">
+		<div style="margin-bottom: 10px; margin-top: 20px; width: 100%">
+			<h2 style="text-align: center; margin: 0px auto;">Your Real-Time Energy Consumption</h2>
+		</div>
+	</div>
+	<div style="width: 100%;">
+		<div id='chartContainer' style='height: 370px; width: 95%; margin: 0px auto; margin-top: 20px; margin-bottom: 10px'></div>
+	</div>
+	<div style="width: auto; height: auto; display: flex; align-items: flex-end; margin-top: 15px">
+		<div class="btn-group" data-toggle="buttons" style="margin: 0px auto;">
+			<label id="hide-prediction" class="btn btn-primary active">			
+				<input type="radio">Hide Prediction
+			</label>
+			<label id="show-prediction" class="btn btn-primary">
+				<input type="radio">Show Prediction
+			</label>
+		</div>
+	</div>
+{% endblock %}
+
+{% block scripts %}
+	<script>
+		window.onload = function() {
+			// Get data entries for today
+			var data_entries = []
+			// Get user's real-time energy consumption
+			{% for key in data_entries %}
+			data_entries.push({x: new Date({{ key }} * 1000) {% if data_entries[key] > 0 %}, y: {{ data_entries[key] }} {% endif %}});
+			{% endfor %}
+			console.log(data_entries);
+			// Get prediction for today
+			var prediction_data = []
+			{% for key in prediction %}
+			prediction_data.push({x: new Date({{ key }} * 1000), y: {{ prediction[key] }}});
+			{% endfor %}
+
+			marker_type = "none"
+
+			// Include scripts for chart
+			{% include "_chart.js" %}
+
+			// Event listeners for show/hide prediction buttons
+			document.getElementById("show-prediction").addEventListener("click", showPrediction);
+			document.getElementById("hide-prediction").addEventListener("click", hidePrediction);
+
+			function showPrediction() {
+				if (chart.data[1] == null) {
+					chart.options.data.push({
+						type: "line",
+						markerType: "none",
+						dataPoints: prediction_data
+					});
+					chart.render();
+				}
+			}
+
+			function hidePrediction() {
+				if (chart.data[1] != null) {
+					chart.options.data.pop();
+					chart.render();
+				}
+			}
+		}
+	</script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	{{ super() }}
+{% endblock %}
